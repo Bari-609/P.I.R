@@ -1,23 +1,3 @@
-// Cookie functions
-function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = `${name}=${value};${expires};path=/`;
-    console.log(`Cookie set: ${name}=${value}; ${expires}`);
-}
-
-function getCookie(name) {
-    const nameEQ = `${name}=`;
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
-
 // Lightbox functions
 let clickTimer = null;
 
@@ -34,12 +14,7 @@ function closeLightbox() {
 // DOMContentLoaded event
 document.addEventListener('DOMContentLoaded', function() {
     const imageContainer = document.querySelector('.Image_profils');
-    const consent = getCookie('cookiesAccepted');
     const header = document.querySelector('h1');
-    const cookieConsentContainer = document.getElementById('cookieConsentContainer');
-    const contentOverlay = document.getElementById('contentOverlay');
-
-    console.log('Cookie consent value:', consent);
 
     // Image profile click events
     if (imageContainer) {
@@ -82,32 +57,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.removeEventListener("click", playMusic);
     });
-
-    // Cookie consent logic
-    if (consent === 'true' || consent === 'false') {
-        cookieConsentContainer.style.display = 'none';
-        contentOverlay.style.display = 'none';
-    } else {
-        cookieConsentContainer.style.display = 'block';
-        contentOverlay.style.display = 'block';
-    }
-
-    document.getElementById('acceptCookies').onclick = function() {
-        setCookie('cookiesAccepted', 'true', 365);
-        cookieConsentContainer.style.display = 'none';
-        contentOverlay.style.display = 'none';
-    };
-
-    document.getElementById('customizeCookies').onclick = function() {
-        document.getElementById('cookieSettings').style.display = 'block';
-    };
-
-    document.getElementById('saveCookieSettings').onclick = function() {
-        let analyticsConsent = document.getElementById('analyticsCookies').checked;
-        let functionalConsent = document.getElementById('functionalCookies').checked;
-        setCookie('cookiesAccepted', JSON.stringify({ analytics: analyticsConsent, functional: functionalConsent }), 365);
-        cookieConsentContainer.style.display = 'none';
-        document.getElementById('cookieSettings').style.display = 'none';
-        contentOverlay.style.display = 'none';
-    };
 });
