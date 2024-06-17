@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.I.R</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../../Ressource/Logo/Logo1.ico" type="image/png">
+</head>
+<body>
+<div id="contentOverlay" class="content-overlay"></div>
+<div id="cookieConsentContainer" class="cookie-consent-container">
+  <div class="cookie-consent-content">
+    <p>Ce site utilise des cookies pour améliorer votre expérience. En continuant à naviguer sur le site, vous acceptez notre utilisation des cookies.</p>
+    <button id="acceptCookies" class="btn-cookie">Accepter</button>
+    <button id="customizeCookies" class="btn-cookie">Personnaliser</button>
+  </div>
+</div>
+<!-- Paramètres des cookies -->
+<div id="cookieSettings" class="cookie-settings" style="display:none;">
+  <h5>Préférences des cookies</h5>
+  <div>
+    <input type="checkbox" id="analyticsCookies" name="cookieType" value="analytics">
+    <label for="analyticsCookies">Cookies analytiques</label>
+  </div>
+  <div>
+    <input type="checkbox" id="functionalCookies" name="cookieType" value="functional">
+    <label for="functionalCookies">Cookies fonctionnels</label>
+  </div>
+  <button id="saveCookieSettings" class="btn-cookie">Sauvegarder les préférences</button>
+</div>
+    <header>
+    <div class="logo-container">
+        <img src="../../Ressource/Logo/Logo1.png" alt="Logo PIR">
+    </div>
+        <h2>P.I.R</h2>
+<div class="logo-container2">
+<a href="https://www.mon-site.com/section1">
+    <img src="../../Ressource/Logo/Logo2.png" alt="Logo2">
+</a>
+<a href="https://www.mon-site.com/section2">
+    <img src="../../Ressource/Logo/Logo3.png" alt="Logo3">
+</a>
+<a href="https://www.mon-site.com/section3">
+    <img src="../../Ressource/Logo/Logo4.png" alt="Logo4">
+</a>
+<a href="https://www.mon-site.com/section4">
+    <img src="../../Ressource/Logo/Logo5.png" alt="Logo5">
+</a>
+</div>
+    </header>
+<audio id="bgMusic" loop>
+    <source src="../../Ressource/Musique/2FLASHING 70 BPM.mp3" type="audio/mp3">
+    Votre navigateur ne supporte pas l'élément audio.
+</audio>
+    <nav class="member-area">
+        <a href="..\Profils\Profils.html">Profil</a>
+        <a href="#works">Galerie</a>
+        <a href="#events">Événements</a>
+    </nav>
+<div class="h1-container">
+    <h1>L'EP 2 sera bientot disponible, restez vigilant...</h1>
+</div>
+<div class="Image_profils">
+    <img src="../../Ressource\Image\img1_0.jpeg" alt="Profils">
+</div>
+</div>
+<section class="bio">
+<h3>Biographie</h3>
+<iframe id="bio-iframe" src="../Framework/Biographie/biographie.html" frameborder="0" style="width: 100%;"></iframe>
+<a href="..\Profils\Profils.html" class="next-link">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg);">
+        <path d="M6 12l6-6 6 6-6 6z" fill="#FFFFFF"/>
+    </svg>
+</a>
+</section>
+    <section class="gallery">
+        <h3>Galerie</h3>
+        <img src="../../Ressource/Image/img1.jpeg" alt="Image 1" onclick="openLightbox(this);">
+        <img src="../../Ressource/Image/img2.jpeg" alt="Image 2" onclick="openLightbox(this);">
+        <img src="../../Ressource/Image/img3.jpeg" alt="Image 3" onclick="openLightbox(this);">
+        <img src="../../Ressource/Image/img4.jpeg" alt="Image 4" onclick="openLightbox(this);">
+<a href="your_link_here.html" class="next-link">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg);">
+        <path d="M6 12l6-6 6 6-6 6z" fill="#FFFFFF"/>
+    </svg>
+</a>
+    </section>
+<div id="lightbox" onclick="closeLightbox();" style="display:none;">
+    <img id="lightbox-img" src="">
+</div>
+    <section class="social-media">
+        <h3>Réseaux Sociaux</h3>
+        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://twitter.com">Twitter</a>
+    </section>
+    <section class="contact">
+        <h3>Contact</h3>
+        <form action="submit_form.php" method="post">
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2024 P.I.R. Tous droits réservés.</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

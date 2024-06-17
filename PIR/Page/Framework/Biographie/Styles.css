@@ -1,0 +1,69 @@
+/* S'assurer que le surlignage fonctionne bien sur tous les éléments */
+*::selection {
+    background-color: #9D7153; /* Marron pour le fond */
+    color: #FFFFFF; /* Gris clair pour le texte */
+    -webkit-text-fill-color: white;
+}
+
+*::-webkit-selection {
+    background-color: #9D7153; /* Marron pour le fond */
+    color: #FFFFFF; /* Gris clair pour le texte */
+    -webkit-text-fill-color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #BDBDBB; /* gris clair comme couleur de fond */
+    color: #303030; /* gris foncé pour le texte */
+}
+
+.partie {
+    background-color: white; /* fond blanc pour les sections pour un contraste élevé */
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: inset 0 0 5px 0px rgb(0 0 0);
+}
+
+.partie h2 {
+    font-size: 70px; /* Taille initiale pour les grands écrans */
+    background-image: linear-gradient(45deg, #9D7153, #9D7153, #9D7153); /* utilisation des couleurs données dans un gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;  /* ajustement de l'espace en haut */
+}
+
+.partie p {
+    font-size: 25px; /* Taille initiale pour les grands écrans */
+    margin-top: 20px;  /* espace uniforme après le titre */
+}
+
+/* Media queries pour les écrans moyens, tablettes */
+@media (max-width: 768px) {
+    .partie h2 {
+        font-size: 50px; /* Taille réduite pour les écrans moyens */
+    }
+    .partie p {
+        font-size: 20px; /* Taille de texte réduite pour une meilleure lisibilité */
+    }
+    .partie {
+        padding: 15px;
+        margin: 15px;
+    }
+}
+
+/* Media queries pour les petits écrans, smartphones */
+@media (max-width: 480px) {
+    .partie h2 {
+        font-size: 30px; /* Taille plus petite pour les petits écrans */
+    }
+    .partie p {
+        font-size: 16px; /* Taille de texte encore plus petite pour les petits écrans */
+    }
+    .partie {
+        padding: 10px;
+        margin: 10px;
+    }
+}

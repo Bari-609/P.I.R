@@ -1,0 +1,169 @@
+/* S'assurer que le surlignage fonctionne bien sur tous les éléments */
+*::selection {
+    background-color: #9D7153; /* Marron pour le fond */
+    color: #FFFFFF; /* Blanc pour le texte */
+}
+
+*::-webkit-selection {
+    background-color: #9D7153; /* Marron pour le fond */
+    color: #FFFFFF; /* Blanc pour le texte */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    color: #303030;
+}
+
+header {
+    display: flex;
+    background-color: #303030;
+    color: white;
+    padding: 20px;
+}
+
+header .logo-container img {
+    height: 80px;
+    width: auto;
+}
+
+h2 {
+   margin-top: auto;
+   font-size: 30px;	
+}
+
+.logo-container {
+    padding-left: 20px; /* Espace à gauche pour le logo */
+}
+
+.logo-container img {
+    height: 80px; /* Hauteur du logo, ajustez selon vos besoins */
+    width: auto; /* Garde la largeur proportionnelle à la hauteur */
+}
+
+/* Style spécifique pour les liens des logos */
+.logo-container2 {
+    display: flex;
+    margin-top: 0.9%;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+/* Style pour les images à l'intérieur des liens spécifiques */
+.logo-container2 img {
+    padding: 5px;
+    width: 50px; /* Largeur fixe pour tous les logos */
+    height: auto; /* Hauteur automatique pour maintenir le ratio aspect */
+    vertical-align: middle; /* Alignement vertical si nécessaire */
+}
+
+/* Effet au survol pour agrandir légèrement les logos */
+.logo-container2 img:hover {
+    transform: scale(1.1); /* Agrandit le logo de 10% lors du survol */
+    cursor: pointer; /* Change le curseur pour indiquer un lien cliquable */
+}
+
+.member-area a {
+    padding: 10px;
+    display: inline-block;
+    color: white;
+    background-color: #9D7153;
+    margin: 5px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px 0px rgb(0, 0, 0);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;  /* transitions douces pour plusieurs propriétés */
+}
+
+.member-area a:hover {
+    background-color: #BDBDBB;  /* Changement de couleur de fond lors du survol */
+    transform: translateY(-4px);  /* Déplacement légèrement vers le haut */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* Ombre plus prononcée pour un effet de profondeur */
+}
+
+.Accueil-area a{
+    padding: 10px;
+    display: inline-block;
+    color: white;
+    background-color: #9D7153;
+    margin: 5px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px 0px rgb(0, 0, 0);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;  /* transitions douces pour plusieurs propriétés */
+}
+
+.Accueil-area a:hover {
+    background-color: #BDBDBB;  /* Changement de couleur de fond lors du survol */
+    transform: translateY(-4px);  /* Déplacement légèrement vers le haut */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* Ombre plus prononcée pour un effet de profondeur */
+}
+
+.bottom-content {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 9px 0px rgb(0 0 0);
+}
+
+.bottom-images {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bottom-images img {
+    display: grid;
+    margin: 50px;
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.bottom-images img:hover {
+    transform: scale(1.05) translateY(-6px);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #303030;
+    color: white;
+}
+
+/* Sélection personnalisée pour scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9D7153;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #BDBDBB;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo-container2 {
+        margin-top: 10px;
+    }
+
+    .bottom-images {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,369 @@
+/* S'assurer que le surlignage fonctionne bien sur tous les éléments */
+*::selection {
+    background-color: #9D7153; /* Marron pour le fond */
+    color: #FFFFFF; /* Gris clair pour le texte */
+    -webkit-text-fill-color: white;
+}
+
+*::-webkit-selection {
+    background-color: #9D7153; /* Marron pour le fond */
+    color: #FFFFFF; /* Gris clair pour le texte */
+    -webkit-text-fill-color: white;
+}
+
+.content-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente noire */
+  z-index: 1000; /* Assurez-vous que la superposition est au-dessus du contenu mais en dessous de la bannière de cookies */
+}
+
+.cookie-consent-container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e2dfdf;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  border: 3px solid #9d715396;
+}
+
+.cookie-consent-content p {
+  margin: 0 10px 0 0;
+}
+
+.btn-cookie {
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  background-color: #9d7153;
+  border: none;
+  color: white;
+  cursor: pointer;
+  box-shadow: 2px 2px 7px 0px rgb(0 0 0 / 53%);
+}
+
+.btn-cookie:hover {
+  background-color: #BDBDBB;
+}
+
+.cookie-settings {
+position: fixed;
+    padding: 50px;
+    bottom: 32%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e2dfdf;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    border: 3px solid #9d715396;
+}
+
+.cookie-settings h5 {
+  margin-top: 0;
+}
+
+img {
+    cursor: pointer;  /* Change le curseur en main lorsque survolé */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    color: #303030;
+}
+
+header {
+    display: flex;
+    background-color: #303030;
+    color: white;
+    padding: 20px;
+}
+
+h2 {
+   margin-top: auto;
+   font-size: 30px;	
+}
+
+h1 {
+    opacity: 0; /* Commence invisible */
+    position: absolute; /* Assurez-vous que cela ne perturbe pas la mise en page des autres éléments */
+    right: 0; /* Aligné à droite */
+}
+
+h1.visible {
+    transform: translateX(0); /* Déplacez le h1 en place */
+    opacity: 1; /* Rendez le h1 visible */
+}
+
+.h1-container {
+    position: absolute;
+    margin-top: 8%;
+    z-index: -1;
+    margin-left: 34%;
+    width: 25%;
+    font-size: 10px;
+}
+
+.logo-container {
+    padding-left: 20px; /* Espace à gauche pour le logo */
+}
+
+.logo-container img {
+    height: 80px; /* Hauteur du logo, ajustez selon vos besoins */
+    width: auto; /* Garde la largeur proportionnelle à la hauteur */
+}
+
+/* Style spécifique pour les liens des logos */
+.logo-container2 {
+    display: flex;
+    margin-top: 0.9%;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+/* Style pour les images à l'intérieur des liens spécifiques */
+.logo-container2 img {
+    padding: 5px;
+    width: 50px; /* Largeur fixe pour tous les logos */
+    height: auto; /* Hauteur automatique pour maintenir le ratio aspect */
+    vertical-align: middle; /* Alignement vertical si nécessaire */
+}
+
+/* Effet au survol pour agrandir légèrement les logos */
+.logo-container2 img:hover {
+    transform: scale(1.1); /* Agrandit le logo de 10% lors du survol */
+    cursor: pointer; /* Change le curseur pour indiquer un lien cliquable */
+}
+
+.member-area a, .social-media a {
+    padding: 10px;
+    display: inline-block;
+    color: white;
+    background-color: #9D7153;
+    margin: 5px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px 0px rgb(0, 0, 0);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;  /* transitions douces pour plusieurs propriétés */
+}
+
+.member-area a:hover {
+    background-color: #BDBDBB;  /* Changement de couleur de fond lors du survol */
+    transform: translateY(-4px);  /* Déplacement légèrement vers le haut */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* Ombre plus prononcée pour un effet de profondeur */
+}
+
+.social-media a:hover {
+    background-color: #BDBDBB;  /* Changement de couleur de fond lors du survol */
+    transform: translateY(-4px);  /* Déplacement légèrement vers le haut */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* Ombre plus prononcée pour un effet de profondeur */
+}
+
+.Image_profils {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 14px 5px rgb(0 0 0 / 60%);
+}
+
+.Image_profils img {
+    border-radius: 50%;
+    height: 300px;
+    width: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.Image_profils::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(157, 113, 83, 0);
+    border-radius: 50%;
+    transition: background-color 0.6s ease, transform 0.3s ease;
+    pointer-events: none;
+    box-shadow: inherit; /* Assure que le voile utilise le même ombrage que l'image */
+}
+
+.Image_profils:hover::after {
+    background-color: rgba(157, 113, 83, 0.5);
+    transform: translateY(-6px);
+}
+
+.Image_profils img:hover {
+    transform: translateY(-6px);
+}
+
+.Image_profils.shift-left {
+    transform: translateX(-400px) rotate(-360deg); /* Déplace et tourne lorsqu'activé */
+    transition: transform 1.5s ease; /* Transition pour aller */
+}
+
+.gallery, .contact, .social-media {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 9px 0px rgb(0 0 0);
+}
+
+.bio {
+    height: 1175px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 9px 0px rgb(0 0 0);
+}
+
+.bio iframe {
+    width: 100%;
+    min-height: 1041px;  // Assurez-vous que c'est suffisant pour voir une grande partie du contenu initialement
+    border: none;       // Élimine la bordure pour un look plus propre
+    overflow: hidden;   // Empêche le défilement interne si ce n'est pas désiré
+}
+
+.bio h3, .gallery h3, .contact h3, .social-media h3 {
+    font-size: 26px;
+    color: #9D7153;
+}
+
+.gallery img {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    left: 5.38%;
+}
+
+.gallery img:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.next-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9d7153; /* Brun clair pour le fond du cercle */
+    border-radius: 50%; /* Rend le fond circulaire */
+    width: 48px; /* Taille du cercle */
+    height: 48px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.3); /* Ombre pour un effet de profondeur */
+    text-decoration: none; /* Enlève toute décoration de lien par défaut */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Transition pour l'ombre, la transformation et la couleur de fond */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-link svg {
+    width: 40px; /* Ajustez la taille de l'icône SVG pour remplir le cercle */
+    height: 40px;
+    fill: #FFA500; /* Orange pour la couleur de la flèche */
+}
+
+.next-link:hover {
+    background-color: #BDBDBB; /* Un ton légèrement plus clair de brun pour le fond au survol */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.4); /* Ombre ajustée pour un effet plus profond au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.next-link:hover svg {
+    fill: #FFA500; /* Maintient la couleur orange de la flèche au survol */
+}
+
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: calc(100% - 22px); /* Adjusts for padding */
+}
+
+button {
+    background-color: #BDBDBB;  /* couleur de fond initiale */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.4s ease, box-shadow 0.3s ease;  /* transitions douces pour plusieurs propriétés */
+}
+
+button:hover {
+    background-color: #9D7153;
+    transform: scale(1.01);  /* agrandit légèrement le bouton */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  /* ajoute une ombre pour un effet de profondeur */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #303030;
+    color: white;
+}
+
+/* Largeur de la barre de défilement */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Couleur de l'arrière-plan de la barre de défilement */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Couleur de la poignée (thumb) de la barre de défilement */
+::-webkit-scrollbar-thumb {
+    background: #9D7153;
+}
+
+/* Ombre de la poignée de la barre de défilement */
+::-webkit-scrollbar-thumb:hover {
+    background: ;
+}
+
+@media (max-width: 768px) {
+    .gallery img {
+        max-width: 100%;
+    }
+}
